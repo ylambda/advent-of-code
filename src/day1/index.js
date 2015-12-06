@@ -25,3 +25,6 @@ export function calcEnterBasement(input) {
         return floor === -1;
     });
 }
+
+export var part1 = calcFloor(input);
+export var part2 = calcEnterBasement(input);
