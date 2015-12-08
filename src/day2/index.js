@@ -1,10 +1,3 @@
-var readFileSync = require("fs").readFileSync;
-var file = __dirname + "/input.txt";
-var input = readFileSync(file, "utf8")
-    .trim()
-    .split("\n")
-    .map(parseInput);
-
 export function parseInput(size) {
     return size.split("x").map(x => parseInt(x, 10));
 }
@@ -27,12 +20,22 @@ export function calcRibbonLength(...sizes) {
     return perimeter + bow;
 }
 
-// totalWrappingPaper
-export var part1 = input.reduce((total, sizes) => {
-    return total + calcWrappingPaper(...sizes);
-}, 0);
+export function solvePuzzle () {
+    var readFileSync = require("fs").readFileSync;
+    var file = __dirname + "/input.txt";
+    var input = readFileSync(file, "utf8")
+        .trim()
+        .split("\n")
+        .map(parseInput);
 
-// totalRibbon
-export var part2 = input.reduce((total, sizes) => {
-    return total + calcRibbonLength(...sizes);
-}, 0);
+    var part1 = input.reduce((total, sizes) => {
+        return total + calcWrappingPaper(...sizes);
+    }, 0);
+
+    var part2 = input.reduce((total, sizes) => {
+        return total + calcRibbonLength(...sizes);
+    }, 0);
+
+    return {part1, part2};
+}
+

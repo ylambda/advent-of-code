@@ -1,4 +1,4 @@
-var crypto = require('crypto');
+var crypto = require("crypto");
 
 export function coinMineFactory(sufficient) {
     return function(input) {
@@ -18,7 +18,7 @@ export var superMinecoin = coinMineFactory(sufficient6);
 
 
 function md5hash(input) {
-    return crypto.createHash('md5').update(input).digest("hex")
+    return crypto.createHash("md5").update(input).digest("hex")
 }
 
 function sufficient5(value) {
@@ -29,7 +29,10 @@ function sufficient6(value) {
     return value.indexOf("000000") === 0;
 }
 
+export function solvePuzzle() {
+    var part1 = minecoin("bgvyzdsv");
+    var part2 = superMinecoin("bgvyzdsv");
 
-export var part1 = minecoin("bgvyzdsv");
-export var part2 = superMinecoin("bgvyzdsv");
-console.log(part2);
+    return {part1, part2};
+}
+

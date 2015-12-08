@@ -1,7 +1,3 @@
-var readFileSync = require("fs").readFileSync;
-var file = __dirname + "/input.txt";
-var input = readFileSync(file, "utf8");
-
 export function parseInput(input) {
     return input.trim().split("");
 }
@@ -39,7 +35,7 @@ export class HouseMap {
         this.roboSanta = {x: 0, y: 0};
 
         // first house is always visited
-        this.map.set('0,0', 1);
+        this.map.set("0,0", 1);
     }
 
     move(person, direction) {
@@ -62,13 +58,22 @@ export class HouseMap {
     }
 
     moveSanta (direction) {
-        this.move('santa', direction);
+        this.move("santa", direction);
     }
 
     moveRoboSanta (direction) {
-        this.move('roboSanta', direction);
+        this.move("roboSanta", direction);
     }
 }
 
-export var part1 = calcHouses(input);
-export var part2 = calcHouses2(input);
+export function solvePuzzle() {
+    var readFileSync = require("fs").readFileSync;
+    var file = __dirname + "/input.txt";
+    var input = readFileSync(file, "utf8");
+
+    var part1 = calcHouses(input);
+    var part2 = calcHouses2(input);
+
+    return {part1, part2};
+}
+

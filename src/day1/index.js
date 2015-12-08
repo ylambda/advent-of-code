@@ -1,6 +1,3 @@
-var readFileSync = require("fs").readFileSync;
-var file = __dirname + "/input.txt";
-var input = readFileSync(file, "utf8");
 
 export function parseInput(input) {
     return input.trim().split("");
@@ -26,5 +23,13 @@ export function calcEnterBasement(input) {
     });
 }
 
-export var part1 = calcFloor(input);
-export var part2 = calcEnterBasement(input);
+export function solvePuzzle () {
+    var readFileSync = require("fs").readFileSync;
+    var file = __dirname + "/input.txt";
+    var input = readFileSync(file, "utf8");
+
+    var part1 = calcFloor(input);
+    var part2 = calcEnterBasement(input);
+
+    return {part1, part2};
+}

@@ -1,6 +1,3 @@
-var readFileSync = require("fs").readFileSync;
-var file = __dirname + "/input.txt";
-var input = readFileSync(file, "utf8");
 
 export function nice(input) {
     return hasThreeVowels(input) && hasDoubleLetter(input) && !hasInvalidString(input);
@@ -35,12 +32,20 @@ export function hasRepeatedCharactersSeparated(input) {
     return regex.test(input);
 }
 
-input = input.trim().split("\n");
+export function solvePuzzle() {
+    var readFileSync = require("fs").readFileSync;
+    var file = __dirname + "/input.txt";
+    var input = readFileSync(file, "utf8");
+    input = input.trim().split("\n");
 
-export var part1 = input.reduce((sum, str) => {
-    return sum + (nice(str) ? 1 : 0);
-}, 0);
+    var part1 = input.reduce((sum, str) => {
+        return sum + (nice(str) ? 1 : 0);
+    }, 0);
 
-export var part2 = input.reduce((sum, str) => {
-    return sum + (nice2(str) ? 1 : 0);
-}, 0);
+    var part2 = input.reduce((sum, str) => {
+        return sum + (nice2(str) ? 1 : 0);
+    }, 0);
+
+    return {part1, part2};
+}
+

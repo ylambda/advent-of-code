@@ -1,5 +1,5 @@
 var assert = require("chai").assert;
-var solution = require(__dirname+"/../src/day2/solution");
+var solution = require(__dirname+"/../src/day2/");
 
 describe("Day 2", () => {
 
