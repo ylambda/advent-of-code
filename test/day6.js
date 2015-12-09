@@ -1,5 +1,5 @@
 var assert = require("chai").assert;
-var solution = require(__dirname+"/../src/day6");
+var puzzle = require(__dirname+"/../src/day6");
 
 describe("Day 6", () => {
 
@@ -9,9 +9,9 @@ describe("Day 6", () => {
             var command2 = command1+"\nturn off 0,4 through 9,4";
             var command3 = command1+"\ntoggle 0,4 through 9,4";
 
-            solution.lightGrid(command1, 10*10);
-            solution.lightGrid(command2, (10*10) - 100 );
-            solution.lightGrid(command3, (10*10) - 100 );
+            puzzle.lightGrid(command1, 10*10);
+            puzzle.lightGrid(command2, (10*10) - 100 );
+            puzzle.lightGrid(command3, (10*10) - 100 );
         });
     });
 
@@ -21,9 +21,9 @@ describe("Day 6", () => {
             var command2 = command1+"\nturn off 0,4 through 9,4";
             var command3 = command1+"\ntoggle 0,4 through 9,4";
 
-            solution.lightGrid(command1, 10*10);
-            solution.lightGrid(command2, (10*10) - 100 );
-            solution.lightGrid(command3, (10*10) + 200 );
+            puzzle.lightGrid(command1, 10*10);
+            puzzle.lightGrid(command2, (10*10) - 100 );
+            puzzle.lightGrid(command3, (10*10) + 200 );
         });
     });
 
