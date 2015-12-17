@@ -1,5 +1,5 @@
-var assert = require("chai").assert;
-var puzzle = require(__dirname+"/../src/day7");
+import { assert } from "chai";
+import * as puzzle from "../src/day07";
 
 describe("Day 7", () => {
 
@@ -26,15 +26,6 @@ describe("Day 7", () => {
             assert.equal(result.g, 114);
         });
 
-        it("should evaluate properly", () => {
-            var commands = "";
-            commands += "1 AND y -> d";
-            commands += "\n65 -> x";
-            commands += "\n38448 -> y";
-
-            var result = puzzle.emulate(commands);
-            console.log(result.x, result.y, result.d);
-        });
     });
 
     describe("Part 2", () => {

@@ -1,5 +1,5 @@
 import {assert} from "chai";
-import * as puzzle from "../src/day8";
+import * as puzzle from "../src/day08";
 
 describe("Day 8", () => {
 

@@ -1,5 +1,5 @@
-var assert = require("chai").assert;
-var puzzle = require(__dirname+"/../src/day4");
+import { assert } from "chai";
+import * as puzzle from "../src/day04";
 
 describe("Day 4", () => {
 
