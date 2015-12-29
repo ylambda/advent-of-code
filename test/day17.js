@@ -7,7 +7,6 @@ describe("Day 17", () => {
         it("should find all combinations", () => {
             let containers = [20, 15, 10, 5, 5];
             let combinations = puzzle.findCombinations(containers, 25);
-            console.log(combinations);
 
             assert.equal(combinations.length, 4);
         })
